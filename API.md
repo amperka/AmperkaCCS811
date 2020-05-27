@@ -52,9 +52,9 @@ Returns the stored total volatile organic compounds (TVOC), when method `read` r
 
 Returns the stored estimated equivalent carbon dioxide (eCO2), when method `read` returned `true`. Measurement eCO2 in parts per million — ranges from `400` to `8192` in `ppm`.
 
-### `void setEnvironmentData(uint8_t humidity, float temperature)`
+### `void setEnvironmentData(float humidity, float temperature)`
 
-Sets humidity and temperature data from other Climatic Sensors to compensate for CSS811 data.
+Sets humidity and temperature data from other Climatic Sensors to compensate CSS811 data.
 
 - `humidity`: relative humidity from other sensors. Ranges from `0` to `100` %.
 - `temperature`: ambient temperature from other sensors. Ranges from `−25` to `50` °C.
