@@ -16,11 +16,11 @@ Initializes the given interface, prepares the board for communication. Returns `
 
 Sets the drive mode, which is responsible for the sample rate and power consumption of the sensor. Valid argument `mode` values is:
 
-- `Measure::SLEEP`: Idle. Measurements are disabled, and consumption is 0,034 mW.
-- `Measure::PERIOD_60S`: low power pulse mode. Measurement every 60 seconds, consumption is 1,2 mW.
-- `Measure::PERIOD_10S`: pulse heating mode. Measurement every 10 seconds, consumption is 7 mW.
-- `Measure::PERIOD_1S`: constant power mode. Measurement every 1 second, consumption is 46 mW. This mode sets by default.
-- `Measure::PERIOD_250MS`: constant ultra power mode. Measurement every 250 milliseconds, consumption more then 46 mW.
+- `DriveMode::SLEEP`: Idle. Measurements are disabled, and consumption is 0,034 mW.
+- `DriveMode::PERIOD_60S`: low power pulse mode. Measurement every 60 seconds, consumption is 1,2 mW.
+- `DriveMode::PERIOD_10S`: pulse heating mode. Measurement every 10 seconds, consumption is 7 mW.
+- `DriveMode::PERIOD_1S`: constant power mode. Measurement every 1 second, consumption is 46 mW. This mode sets by default.
+- `DriveMode::PERIOD_250MS`: constant ultra power mode. Measurement every 250 milliseconds, consumption more then 46 mW.
 
 ### `bool available()`
 
