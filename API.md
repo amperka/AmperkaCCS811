@@ -12,7 +12,7 @@ Constructs a new object. The argument `i2cAddress` is the specifies the board I�
 
 Initializes the given interface, prepares the board for communication. Returns `true` device is set up, otherwise `false`. The argument `wire` is an index of the TwoWire interface. If omitted, the connection started on default hardware I²C.
 
-### `void setDriveMode(Measure mode)`
+### `void setDriveMode(DriveMode mode)`
 
 Sets the drive mode, which is responsible for the sample rate and power consumption of the sensor. Valid argument `mode` values is:
 
@@ -30,7 +30,7 @@ Sets the drive mode, which is responsible for the sample rate and power consumpt
 
 Reads and stored the sensor data values TVOC and CO2. Returns value:
 
-- `true`: if data read successfully. Use the `getTVOC` and `getCO2` methods to access the received data.
+- `true`: if data read successfully. Use the `getTVOC` and `geteCO2` methods to access the received data.
 - `false`: if data read error. Use the `getErrorID` method to access the error ID.
 
 ### `String getErrorID()`
@@ -48,7 +48,7 @@ Returns the stored Error ID, when method `read` returned `false`.
 
 Returns the stored total volatile organic compounds (TVOC), when method `read` returned `true`. Measurement TVOC in parts per billion — ranges from `0` to `1187` in `ppb`.
 
-### `uint16_t getCO2()`
+### `uint16_t geteCO2()`
 
 Returns the stored estimated equivalent carbon dioxide (eCO2), when method `read` returned `true`. Measurement eCO2 in parts per million — ranges from `400` to `8192` in `ppm`.
 
