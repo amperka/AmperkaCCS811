@@ -24,11 +24,11 @@ Sets the drive mode, which is responsible for the sample rate and power consumpt
 
 ### `bool available()`
 
-Сhecks if new data TVOC and CO2 are available. Returns `true` if data is available to be read, otherwise `false`. Use the `read` method to be read and stored the sensor data.
+Сhecks if new data TVOC and CO2 is available. Returns `true` if data is readable, otherwise `false`. Use the `read` method to read and store the sensor data.
 
 ### `bool read()`
 
-Reads and stored the sensor data values TVOC and CO2. Returns value:
+Reads and stores the sensor data values TVOC and CO2. Returns value:
 
 - `true`: if data read successfully. Use the `getTVOC` and `geteCO2` methods to access the received data.
 - `false`: if data read error. Use the `getErrorID` method to access the error ID.
