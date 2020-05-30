@@ -1,25 +1,25 @@
 # AmperkaCCS811 API
 
-## `class CCS811`
+## `class AmperkaCCS811`
 
 Create an object of type `CCS811` to communicate with a particular [Air Quality Sensor](https://amperka.ru/product/sensor-co2-ccs811-with-case).
 
-### `CCS811(uint8_t i2cAddress = 0x5A)`
+### `AmperkaCCS811(uint8_t i2cAddress = 0x5A)`
 
-Constructs a new object. The argument `i2cAddress` is the specifies the board I²C address in HEX value, which is `0x5A` factory-default but can be changed to `0x5B`. If omitted, the board I²C address is `0x5A`.
+Constructs a new object. The argument `i2cAddress` specifies the board I²C address in HEX value, which is `0x5A` factory-default but can be changed to `0x5B`. If omitted, the board I²C address is `0x5A`.
 
 ### `bool begin(TwoWire* wire = &Wire)`
 
-Initializes the given interface, prepares the board for communication. Returns `true` device is set up, otherwise `false`. The argument `wire` is an index of the TwoWire interface. If omitted, the connection started on default hardware I²C.
+Initializes the given interface, prepares the board for communication. Returns `true` device is set up, otherwise `false`. The argument `wire` is an index of the TwoWire interface. If omitted, the connection starts on default hardware I²C.
 
 ### `void setDriveMode(DriveMode mode)`
 
-Sets the drive mode, which is responsible for the sample rate and power consumption of the sensor. Valid argument `mode` values is:
+Sets the drive mode, which is responsible for the sample rate and power consumption of the sensor. Valid argument `mode` values are:
 
 - `DriveMode::SLEEP`: Idle. Measurements are disabled, and consumption is 0,034 mW.
 - `DriveMode::PERIOD_60S`: low power pulse mode. Measurement every 60 seconds, consumption is 1,2 mW.
 - `DriveMode::PERIOD_10S`: pulse heating mode. Measurement every 10 seconds, consumption is 7 mW.
-- `DriveMode::PERIOD_1S`: constant power mode. Measurement every 1 second, consumption is 46 mW. This mode sets by default.
+- `DriveMode::PERIOD_1S`: constant power mode. Measurement every 1 second, consumption is 46 mW. This mode is set by default.
 - `DriveMode::PERIOD_250MS`: constant ultra power mode. Measurement every 250 milliseconds, consumption more then 46 mW.
 
 ### `bool available()`
@@ -59,8 +59,8 @@ Sets humidity and temperature data from other Climatic Sensors to compensate CSS
 - `humidity`: relative humidity from other sensors. Ranges from `0` to `100` %.
 - `temperature`: ambient temperature from other sensors. Ranges from `−25` to `50` °C.
 
-By default, the internal algorithm uses 50 % humidity and 25 °C temperature to compensate for environmental changes. Reads humidity and temperature from other Climatic Sensors, e.g., [Troyka Meteo Sensor](https://amperka.ru/product/troyka-meteo-sensor).
+By default, the internal algorithm uses 50 % humidity and 25 °C temperature to compensate for environmental changes. Read humidity and temperature from other Climatic Sensors, e.g., [Troyka Meteo Sensor](https://amperka.ru/product/troyka-meteo-sensor).
 
 ### `void reset()`
 
-Triggers a software reset of the device, which alternative to Power-On reset or Hardware Reset. The call method `begin` to resume the board for communication.
+Triggers a software reset of the device, which alternative to Power-On reset or Hardware Reset.
