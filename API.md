@@ -10,7 +10,7 @@ Constructs a new object. The argument `i2cAddress` specifies the board I²C addr
 
 ### `bool begin(TwoWire* wire = &Wire)`
 
-Initializes the given interface, prepares the board for communication. Returns `true` device is set up, otherwise `false`. The argument `wire` is an index of the TwoWire interface. If omitted, the connection starts on default hardware I²C.
+Initializes the given interface, prepares the board for communication. Returns `true` device is set up, otherwise `false`. The argument `wire` is a pointer to the TwoWire interface. If omitted, the connection starts on default hardware I²C.
 
 ### `void setDriveMode(DriveMode mode)`
 
@@ -24,7 +24,7 @@ Sets the drive mode, which is responsible for the sample rate and power consumpt
 
 ### `bool available()`
 
-Сhecks if new data TVOC and CO2 is available. Returns `true` if data is readable, otherwise `false`. Use the `read` method to read and store the sensor data.
+Сhecks if new TVOC and CO2 data is available. Returns `true` if data is readable, otherwise `false`. Use the `read` method to read and store the sensor data.
 
 ### `bool read()`
 
@@ -59,8 +59,8 @@ Sets humidity and temperature data from other Climatic Sensors to compensate CSS
 - `humidity`: relative humidity from other sensors. Ranges from `0` to `100` %.
 - `temperature`: ambient temperature from other sensors. Ranges from `−25` to `50` °C.
 
-By default, the internal algorithm uses 50 % humidity and 25 °C temperature to compensate for environmental changes. Read humidity and temperature from other Climatic Sensors, e.g., [Troyka Meteo Sensor](https://amperka.ru/product/troyka-meteo-sensor).
+By default, the internal algorithm uses 50 % humidity and 25 °C temperature to compensate for environmental changes. Read humidity and temperature from other climatic sensors, e.g., [Troyka Meteo Sensor](https://amperka.ru/product/troyka-meteo-sensor).
 
 ### `void reset()`
 
-Triggers a software reset of the device, which alternative to Power-On reset or Hardware Reset.
+Triggers a software reset of the device, which is an alternative to power-on reset and hardware reset.
