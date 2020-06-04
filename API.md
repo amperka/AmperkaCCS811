@@ -10,7 +10,7 @@ Constructs a new object. The argument `i2cAddress` specifies the board I²C addr
 
 ### `bool begin(TwoWire* wire = &Wire)`
 
-Initializes the given interface, prepares the board for communication. Returns `true` device is set up, otherwise `false`. The argument `wire` is a pointer to the TwoWire interface. If omitted, the connection starts on default hardware I²C.
+Initializes the given interface, prepares the board for communication. Returns `true` if device is set up, otherwise `false`. The argument `wire` is a pointer to the TwoWire interface. If omitted, the connection starts with default hardware I²C.
 
 ### `void setDriveMode(DriveMode mode)`
 
@@ -30,8 +30,8 @@ Sets the drive mode, which is responsible for the sample rate and power consumpt
 
 Reads and stores the sensor data values TVOC and CO2. Returns value:
 
-- `true`: if data read successfully. Use the `getTVOC` and `geteCO2` methods to access the received data.
-- `false`: if data read error. Use the `getErrorID` method to access the error ID.
+- `true`: if data is read successfully. Use the `getTVOC` and `geteCO2` methods to access the received data.
+- `false`: if data is read with an error. Use the `getErrorID` method to access the error ID.
 
 ### `String getErrorID()`
 
@@ -54,7 +54,7 @@ Returns the stored estimated equivalent carbon dioxide (eCO2), when method `read
 
 ### `void setEnvironmentData(float humidity, float temperature)`
 
-Sets humidity and temperature data from other Climatic Sensors to compensate CSS811 data.
+Sets humidity and temperature data from other climatic sensors to compensate CSS811 data.
 
 - `humidity`: relative humidity from other sensors. Ranges from `0` to `100` %.
 - `temperature`: ambient temperature from other sensors. Ranges from `−25` to `50` °C.
